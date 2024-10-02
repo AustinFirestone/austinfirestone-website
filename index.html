@@ -1,29 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Austin Firestone</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Austin Firestone</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Welcome to Austin Firestone's Website</h1>
-    <p>Connect with me on social media!</p>
-  </header>
+    <!-- Quote corner on the left -->
+    <div class="quote-corner">
+        <p>Quote I've been pondering</p>
+        <blockquote>
+            "Comrade," said Snowball, "those ribbons that you are so devoted to are the badge of slavery. Can you not understand that liberty is worth more than ribbons?"
+            <footer>- Animal Farm, George Orwell</footer>
+        </blockquote>
+    </div>
+    <!-- Hamburger menu on the right -->
+    <div class="menu-btn">
+        <span>&#9776;</span>
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#connect">Connect</a></li>
+        </ul>
+    </div>
 
-  <nav>
-    <ul>
-      <li><a href="https://github.com/your-github" target="_blank">GitHub</a></li>
-      <li><a href="https://twitter.com/your-twitter" target="_blank">Twitter</a></li>
-      <li><a href="https://linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a></li>
-    </ul>
-  </nav>
+    <!-- Centered header -->
+    <header>
+        <h1>Austin Firestone</h1>
+    </header>
 
-  <footer>
-    <p>&copy; 2024 Austin Firestone</p>
-  </footer>
+    <!-- Stacked buttons with logos -->
+    <div class="button-container">
+        <a href="https://goodreads.com/your-profile" class="btn" id="reader">
+            Reader:
+            <img src="https://d.gr-assets.com/misc/1454549184-1454549184_goodreads_misc.jpg" alt="Goodreads Logo" class="button-logo">
+        </a>
+        <a href="https://solomonnote.com" class="btn" id="founder">
+            Founder:
+            <img src="assets/solo-logo.png" alt="Company Logo" class="button-logo">
+        </a>
+        <a href="https://github.com/AustinFirestone" class="btn" id="innovator">
+            Innovator:
+            <img src="assets/github-logo.png" alt="GitHub Logo" class="button-logo">
+        </a>
+        <a href="https://scripture-link.com" class="btn" id="faith">
+            Man of Faith:
+            <img src="assets/scripture-logo.png" alt="Scripture Logo" class="button-logo">
+        </a>
+    </div>
 
-  <script src="script.js"></script>
+    <!-- "My Projects" link with downwards chevron -->
+    <div class="projects-link">
+        <a href="#my-projects">My Projects &#x25BC;</a>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,29 +1,109 @@
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f4f4f4;
-  }
-  
-  header {
-    margin-top: 50px;
-  }
-  
-  nav ul {
-    list-style: none;
+    background-color: #000; /* Black background */
+    color: #fff;
+    margin: 0;
     padding: 0;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin: 0 15px;
-  }
-  
-  nav ul li a {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: 100vh; /* Full viewport height */
+}
+
+.menu-btn span {
+    font-size: 30px;
+    position: absolute;
+    right: 20px; /* Move to the right */
+    top: 20px;
+    cursor: pointer;
+}
+
+.menu {
+    display: none;
+    background-color: #444;
+    position: absolute;
+    top: 0;
+    right: 0; /* Adjust position to right */
+    width: 100%;
+    text-align: left;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 10px;
+}
+
+.menu ul li a {
+    color: white;
     text-decoration: none;
-    color: #333;
-    font-size: 20px;
-  }
-  
-  footer {
+    display: block;
+    padding: 10px;
+}
+
+.quote-corner {
+    position: absolute;
+    left: 20px; /* Move to the left */
+    top: 20px;
+    text-align: left;
+}
+
+.quote-corner p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.quote-corner blockquote {
+    font-style: italic;
+    margin: 10px 0 0 0;
+}
+
+.quote-corner footer {
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+header {
+    margin-top: 20px;
+}
+
+.button-container {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.btn {
+    display: block; /* Stack buttons vertically */
+    background: linear-gradient(45deg, #6e6e6e, #999);
+    border-radius: 5px; /* Less rounded corners */
+    padding: 10px 20px;
+    margin: 10px auto; /* Center buttons horizontally */
+    color: white;
+    text-decoration: none;
+    width: 250px; /* Set a width to align buttons */
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: linear-gradient(45deg, #999, #ccc);
+}
+
+.button-logo {
+    max-height: 20px;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.projects-link a {
+    display: inline-block;
+    color: white;
+    padding: 10px 0;
+    text-decoration: none;
     margin-top: 50px;
-  }
+    font-size: 1.2em;
+}
+
+.projects-link a:hover {
+    color: #ccc;
+}
