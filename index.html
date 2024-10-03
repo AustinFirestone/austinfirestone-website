@@ -2,12 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Austin Firestone</title>
+    <!-- Google Fonts Integration -->
+    <!-- Roboto for All Text and Open Sans for Title -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Preconnect with crossorigin -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Link to Your CSS File -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Quote corner on the left -->
+    <!-- Quote Corner on the Left -->
     <div class="quote-corner">
         <p>Quote I've been pondering</p>
         <blockquote>
@@ -15,9 +20,10 @@
             <footer>- Animal Farm, George Orwell</footer>
         </blockquote>
     </div>
-    <!-- Hamburger menu on the right -->
+
+    <!-- Hamburger Menu on the Right -->
     <div class="menu-btn">
-        <span>&#9776;</span>
+        <span>&#9776;</span> <!-- Hamburger Icon -->
     </div>
     <div class="menu">
         <ul>
@@ -26,36 +32,48 @@
         </ul>
     </div>
 
-    <!-- Centered header -->
-    <header>
-        <h1>Austin Firestone</h1>
-    </header>
+    <!-- Centered Main Content Container -->
+    <div class="main-content">
+        <!-- Centered Header -->
+        <header>
+            <h1>Austin Firestone</h1> <!-- Title with Open Sans -->
+        </header>
 
-    <!-- Stacked buttons with logos -->
-    <div class="button-container">
-        <a href="https://goodreads.com/your-profile" class="btn" id="reader">
-            Reader:
-            <img src="https://d.gr-assets.com/misc/1454549184-1454549184_goodreads_misc.jpg" alt="Goodreads Logo" class="button-logo">
-        </a>
-        <a href="https://solomonnote.com" class="btn" id="founder">
-            Founder:
-            <img src="assets/solo-logo.png" alt="Company Logo" class="button-logo">
-        </a>
-        <a href="https://github.com/AustinFirestone" class="btn" id="innovator">
-            Innovator:
-            <img src="assets/github-logo.png" alt="GitHub Logo" class="button-logo">
-        </a>
-        <a href="https://scripture-link.com" class="btn" id="faith">
-            Man of Faith:
-            <img src="assets/scripture-logo.png" alt="Scripture Logo" class="button-logo">
-        </a>
+        <!-- Stacked Buttons with Logos -->
+        <div class="button-container">
+            <a href="https://www.goodreads.com/review/list/141805263?shelf=read" class="btn" id="reader" target="_blank" rel="noopener noreferrer">
+                <span class="text">Books</span>
+                <span class="image-container">
+                    <img src="https://d.gr-assets.com/misc/1454549184-1454549184_goodreads_misc.jpg" alt="Goodreads Logo" class="button-logo">
+                </span>
+            </a>
+            <a href="https://solomonnote.com" class="btn" id="founder" target="_blank" rel="noopener noreferrer">
+                <span class="text">Company</span>
+                <img src="assets/solo_logo_lower.png" alt="Company Logo" class="button-logo">
+            </a>
+            <a href="https://github.com/AustinFirestone" class="btn" id="innovator" target="_blank" rel="noopener noreferrer">
+                <span class="text">Code</span>
+                <img src="assets/github-logo.png" alt="GitHub Logo" class="button-logo">
+            </a>
+            <a href="https://www.bible.com/bible/59/1TI.4.10.ESV" class="btn" id="faith" target="_blank" rel="noopener noreferrer">
+                <span class="text">Purpose ✞</span>
+                <!-- If you want an image here, add it similarly -->
+            </a>
+        </div>
+
+        <!-- "My Projects" Link with Chevron Below the Text -->
+        <div class="projects-link">
+            <a href="#my-projects">My Projects</a>
+            <!-- SVG Chevron Arrow -->
+            <div class="chevron">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </div>
     </div>
 
-    <!-- "My Projects" link with downwards chevron -->
-    <div class="projects-link">
-        <a href="#my-projects">My Projects &#x25BC;</a>
-    </div>
-
+    <!-- Link to Your JavaScript File -->
     <script src="script.js"></script>
 </body>
 </html>

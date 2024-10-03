@@ -1,109 +1,331 @@
+/* ------------------------------ */
+/* General Body Styling */
+/* ------------------------------ */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #000; /* Black background */
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
-    height: 100vh; /* Full viewport height */
+    font-family: 'Roboto', sans-serif; /* Apply Roboto for all body text */
+    background-image: url('assets/cool-background-3.png'); /* Set background image */
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    color: #fff; /* Default text color */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Use Flexbox for layout */
+    flex-direction: column; /* Arrange items vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    min-height: 100vh; /* Full viewport height */
+    position: relative; /* Establish a positioning context for absolutely positioned elements */
+    /* Optional: Add a semi-transparent overlay for better text readability */
+    /* Uncomment the following lines if needed */
+    /* 
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+    */
+}
+
+/* ------------------------------ */
+/* Hamburger Menu Button */
+/* ------------------------------ */
+.menu-btn {
+    position: absolute; /* Position relative to the nearest positioned ancestor (body) */
+    right: 20px; /* 20px from the right */
+    top: 20px; /* 20px from the top */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    z-index: 1001; /* Ensure it's above other elements */
 }
 
 .menu-btn span {
-    font-size: 30px;
-    position: absolute;
-    right: 20px; /* Move to the right */
-    top: 20px;
-    cursor: pointer;
+    font-size: 30px; /* Size of the hamburger icon */
+    color: #fff; /* Hamburger icon color */
 }
 
+/* ------------------------------ */
+/* Dropdown Menu Styling */
+/* ------------------------------ */
 .menu {
-    display: none;
-    background-color: #444;
-    position: absolute;
-    top: 0;
-    right: 0; /* Adjust position to right */
-    width: 100%;
-    text-align: left;
+    display: none; /* Hidden by default */
+    position: absolute; /* Position relative to the nearest positioned ancestor (body) */
+    top: 60px; /* Position below the hamburger button */
+    right: 20px; /* Align with the hamburger button */
+    background-color: rgba(68, 68, 68, 0.95); /* Semi-transparent background color */
+    border: 1px solid #ccc; /* Border for the menu */
+    width: 150px; /* Fixed width */
+    z-index: 1000; /* Ensure it's below the hamburger button */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .menu ul {
-    list-style-type: none;
-    padding: 10px;
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
 }
 
 .menu ul li a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    padding: 10px;
+    color: white; /* Menu link color */
+    text-decoration: none; /* Remove underline */
+    display: block; /* Make the entire area clickable */
+    padding: 10px; /* Padding for clickable area */
 }
 
+.menu ul li a:hover {
+    background-color: #555; /* Hover background color */
+}
+
+/* ------------------------------ */
+/* Quote Styling */
+/* ------------------------------ */
 .quote-corner {
-    position: absolute;
-    left: 20px; /* Move to the left */
-    top: 20px;
-    text-align: left;
+    position: absolute; /* Position to the left corner */
+    left: 20px; /* 20px from the left */
+    top: 20px; /* 20px from the top */
+    text-align: left; /* Left-align text */
+    max-width: 200px; /* Limit width to make it more vertical */
+    padding: 10px; /* Padding inside the quote container */
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.quote-corner p,
+.quote-corner blockquote,
+.quote-corner footer {
+    font-family: 'Roboto', sans-serif; /* Ensure consistency with body text */
 }
 
 .quote-corner p {
-    margin: 0;
-    font-weight: bold;
+    margin: 0; /* Remove default margin */
+    font-weight: bold; /* Bold text for the label */
 }
 
 .quote-corner blockquote {
-    font-style: italic;
-    margin: 10px 0 0 0;
+    font-style: italic; /* Italicize the quote */
+    margin: 10px 0 0 0; /* Top margin for spacing */
 }
 
 .quote-corner footer {
-    font-size: 0.9em;
-    color: #ccc;
+    font-size: 0.9em; /* Slightly smaller text for the footer */
+    color: #ccc; /* Lighter color for the footer */
 }
 
+/* ------------------------------ */
+/* Main Content Container */
+/* ------------------------------ */
+.main-content {
+    display: flex; /* Use Flexbox */
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center; /* Center items horizontally */
+    /* Optional: Add padding or margin if needed */
+}
+
+/* ------------------------------ */
+/* Header Styling */
+/* ------------------------------ */
 header {
-    margin-top: 20px;
+    margin-bottom: 20px; /* Space below the header */
 }
 
+header h1 {
+    font-family: 'Open Sans', sans-serif; /* Apply Open Sans for the title */
+    font-size: 2.5em; /* Large font size for the header */
+    font-weight: 600; /* Reduced boldness */
+    margin: 0; /* Remove default margin */
+    color: #fff; /* Header text color */
+    white-space: nowrap; /* Prevent text from wrapping */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Optional: Add text shadow for better readability */
+}
+
+/* ------------------------------ */
+/* Button Container Styling */
+/* ------------------------------ */
 .button-container {
-    margin-top: 20px;
-    padding: 20px;
+    width: 100%; /* Full width of the container */
+    max-width: 300px; /* Maximum width for buttons */
+    display: flex; /* Use Flexbox */
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons horizontally */
+    gap: 15px; /* Space between buttons */
 }
 
+/* ------------------------------ */
+/* Button Styling */
+/* ------------------------------ */
 .btn {
-    display: block; /* Stack buttons vertically */
-    background: linear-gradient(45deg, #6e6e6e, #999);
-    border-radius: 5px; /* Less rounded corners */
-    padding: 10px 20px;
-    margin: 10px auto; /* Center buttons horizontally */
-    color: white;
-    text-decoration: none;
-    width: 250px; /* Set a width to align buttons */
-    transition: background 0.3s ease;
+    display: flex; /* Use Flexbox for button content */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between text and image */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding inside the button */
+    color: white; /* Default text color */
+    text-decoration: none; /* Remove underline */
+    width: 100%; /* Full width of the container */
+    transition: background 0.3s ease, opacity 0.3s ease; /* Smooth transitions */
+    height: 60px; /* Fixed height */
+    box-sizing: border-box; /* Include padding and border in width and height */
+    font-family: 'Roboto', sans-serif; /* Apply Roboto for button text */
 }
 
-.btn:hover {
-    background: linear-gradient(45deg, #999, #ccc);
+.btn .text {
+    flex: 1; /* Allow text to take available space */
+    text-align: left; /* Left-align text */
+    font-size: 1.2em; /* Larger font size for text */
+    margin-right: 10px; /* Space between text and image */
 }
 
 .button-logo {
-    max-height: 20px;
-    vertical-align: middle;
-    margin-left: 5px;
+    height: 40px; /* Reasonable height for images */
+    width: auto; /* Maintain aspect ratio */
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+/* ------------------------------ */
+/* Specific Button Styles */
+/* ------------------------------ */
+
+/* First Button: Books */
+#reader {
+    background-color: #FFFFFF; /* White background */
+    color: #000; /* Black text for better contrast */
+}
+
+#reader .image-container {
+    background-color: #fff; /* Background color behind the image */
+    padding: 5px; /* Padding around the image */
+    border-radius: 5px; /* Rounded corners */
+    display: flex; /* Center the image */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+#reader .button-logo {
+    height: 30px; /* Smaller height for the first button's image */
+    width: auto; /* Maintain aspect ratio */
+}
+
+/* Second Button: Company */
+#founder {
+    background: linear-gradient(45deg, orange, rgb(0, 0, 0)); /* Orange to black gradient */
+    color: white; /* White text */
+}
+
+/* Third Button: Code */
+#innovator {
+    background: linear-gradient(45deg, black, gray); /* Black to gray gradient */
+    color: white; /* White text */
+}
+
+/* Fourth Button: Purpose */
+#faith {
+    background: linear-gradient(45deg, gray, white); /* Gray to white gradient */
+    color: #000; /* Black text for readability */
+}
+
+/* ------------------------------ */
+/* Hover Effects */
+/* ------------------------------ */
+.btn:hover {
+    opacity: 0.9; /* Slight transparency on hover */
+}
+
+/* ------------------------------ */
+/* "My Projects" Link Styling */
+/* ------------------------------ */
+.projects-link {
+    margin-top: 30px; /* Space above the projects link */
+    display: flex; /* Use Flexbox */
+    flex-direction: column; /* Stack text and chevron vertically */
+    align-items: center; /* Center horizontally */
+    gap: 5px; /* Space between text and chevron */
 }
 
 .projects-link a {
-    display: inline-block;
-    color: white;
-    padding: 10px 0;
-    text-decoration: none;
-    margin-top: 50px;
-    font-size: 1.2em;
+    color: white; /* Link text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.2em; /* Larger font size */
+    font-family: 'Roboto', sans-serif; /* Apply Roboto for link text */
 }
 
 .projects-link a:hover {
-    color: #ccc;
+    color: #ccc; /* Lighter color on hover */
+}
+
+/* Chevron Styling */
+.projects-link .chevron {
+    /* Removed animation */
+    width: 24px; /* Width of the SVG */
+    height: 24px; /* Height of the SVG */
+    display: flex; /* Use Flexbox for alignment */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.projects-link .chevron svg {
+    /* Optional: Adjust the color if needed */
+    stroke: white; /* Ensure the chevron is white */
+}
+
+/* ------------------------------ */
+/* Responsive Adjustments */
+/* ------------------------------ */
+
+/* Mobile-First Approach: Styles for Mobile Devices First, Then Desktop */
+@media (min-width: 401px) {
+    /* Desktop-Specific Styles */
+
+    header h1 {
+        font-size: 3em; /* Larger font size for desktop */
+    }
+
+    .button-container {
+        max-width: 400px; /* Increase max-width for desktop */
+    }
+
+    .btn {
+        height: 70px; /* Increase button height for desktop */
+    }
+
+    .button-logo {
+        height: 50px; /* Larger logo for desktop */
+    }
+
+    .projects-link .chevron {
+        width: 30px; /* Larger SVG width for desktop */
+        height: 30px; /* Larger SVG height for desktop */
+    }
+}
+
+@media (max-width: 400px) {
+    /* Mobile-Specific Styles */
+
+    body {
+        /* Ensure background image looks good on smaller screens */
+        background-position: center; /* Center the image */
+    }
+
+    header h1 {
+        font-size: 1.8em; /* Smaller font size for mobile */
+    }
+
+    .button-container {
+        max-width: 90%; /* Adjust max width on smaller screens */
+    }
+
+    .btn {
+        height: 50px; /* Reduced height for smaller screens */
+        padding: 8px 15px; /* Reduced padding */
+    }
+
+    .button-logo {
+        height: 30px; /* Smaller image height */
+    }
+
+    .quote-corner {
+        font-size: 0.9em; /* Smaller font size */
+        max-width: 150px; /* Further reduce width for smaller screens */
+    }
+
+    .projects-link .chevron {
+        width: 20px; /* Smaller SVG width */
+        height: 20px; /* Smaller SVG height */
+    }
 }
