@@ -2,180 +2,254 @@
 /* General Body Styling */
 /* ------------------------------ */
 body {
-    font-family: 'Roboto', sans-serif; /* Apply Roboto for all body text */
-    background-image: url('assets/cool-background-3.png'); /* Set background image */
-    background-size: cover; /* Ensure the image covers the entire background */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    color: #fff; /* Default text color */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    display: flex; /* Use Flexbox for layout */
-    flex-direction: column; /* Arrange items vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    min-height: 100vh; /* Full viewport height */
-    position: relative; /* Establish a positioning context for absolutely positioned elements */
-    /* Optional: Add a semi-transparent overlay for better text readability */
-    /* Uncomment the following lines if needed */
-    /* 
-    background-color: rgba(0, 0, 0, 0.5);
-    background-blend-mode: darken;
-    */
+    font-family: 'Roboto', sans-serif;
+    background-image: url('assets/cool-background-4.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000; /* Fallback color */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* ------------------------------ */
+/* Quote Toggle Button (Lightbulb Emoji) */
+/* ------------------------------ */
+.quote-toggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    z-index: 1002;
+}
+
+.lightbulb-emoji {
+    font-size: 32px;
+    transition: transform 0.3s ease;
+}
+
+.lightbulb-emoji:hover {
+    transform: scale(1.1);
+}
+
+/* ------------------------------ */
+/* Quote Container Styling */
+/* ------------------------------ */
+.quote-container {
+    position: absolute;
+    top: 60px; /* Adjusted to drop down from the lightbulb */
+    left: 10px;
+    width: 220px; /* Increased width for better readability */
+    padding: 15px;
+    background-color: #000; /* Solid black background */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1001;
+    box-sizing: border-box;
+}
+
+.quote-container.visible {
+    display: block;
+}
+
+.quote-container h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.1em;
+    text-align: center;
+    /* Removed underline */
+}
+
+.quote-container blockquote {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+.quote-container footer {
+    text-align: right;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #ccc;
 }
 
 /* ------------------------------ */
 /* Hamburger Menu Button */
 /* ------------------------------ */
 .menu-btn {
-    position: absolute; /* Position relative to the nearest positioned ancestor (body) */
-    right: 20px; /* 20px from the right */
-    top: 20px; /* 20px from the top */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    z-index: 1001; /* Ensure it's above other elements */
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    z-index: 1001;
 }
 
 .menu-btn span {
-    font-size: 30px; /* Size of the hamburger icon */
-    color: #fff; /* Hamburger icon color */
+    font-size: 32px;
+    color: #fff;
 }
 
 /* ------------------------------ */
 /* Dropdown Menu Styling */
 /* ------------------------------ */
 .menu {
-    display: none; /* Hidden by default */
-    position: absolute; /* Position relative to the nearest positioned ancestor (body) */
-    top: 60px; /* Position below the hamburger button */
-    right: 20px; /* Align with the hamburger button */
-    background-color: rgba(68, 68, 68, 0.95); /* Semi-transparent background color */
-    border: 1px solid #ccc; /* Border for the menu */
-    width: 150px; /* Fixed width */
-    z-index: 1000; /* Ensure it's below the hamburger button */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: rgba(68, 68, 68, 0.95);
+    border: 1px solid #ccc;
+    width: 150px;
+    z-index: 1000;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu.visible {
+    display: block;
 }
 
 .menu ul {
-    list-style-type: none; /* Remove bullet points */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 .menu ul li a {
-    color: white; /* Menu link color */
-    text-decoration: none; /* Remove underline */
-    display: block; /* Make the entire area clickable */
-    padding: 10px; /* Padding for clickable area */
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
 }
 
 .menu ul li a:hover {
-    background-color: #555; /* Hover background color */
+    background-color: #555;
 }
 
 /* ------------------------------ */
-/* Quote Styling */
+/* Social Media Icons Styling */
 /* ------------------------------ */
-.quote-corner {
-    position: absolute; /* Position to the left corner */
-    left: 20px; /* 20px from the left */
-    top: 20px; /* 20px from the top */
-    text-align: left; /* Left-align text */
-    max-width: 200px; /* Limit width to make it more vertical */
-    padding: 10px; /* Padding inside the quote container */
-    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-    border-radius: 5px; /* Rounded corners */
+.social-icons {
+    display: flex;
+    justify-content: space-around; /* Distribute space evenly */
+    align-items: center;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    width: 100%; /* Ensure full width for spacing */
+    max-width: 300px; /* Limit the maximum width */
 }
 
-.quote-corner p,
-.quote-corner blockquote,
-.quote-corner footer {
-    font-family: 'Roboto', sans-serif; /* Ensure consistency with body text */
+.social-icons.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.quote-corner p {
-    margin: 0; /* Remove default margin */
-    font-weight: bold; /* Bold text for the label */
+.social-icons a {
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease;
 }
 
-.quote-corner blockquote {
-    font-style: italic; /* Italicize the quote */
-    margin: 10px 0 0 0; /* Top margin for spacing */
+.social-icons a:hover {
+    transform: scale(1.1);
 }
 
-.quote-corner footer {
-    font-size: 0.9em; /* Slightly smaller text for the footer */
-    color: #ccc; /* Lighter color for the footer */
+.social-icon {
+    width: 30px;
+    height: auto; /* Maintain aspect ratio */
+}
+
+.message-icon {
+    font-size: 30px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.message-icon:hover {
+    transform: scale(1.1);
 }
 
 /* ------------------------------ */
 /* Main Content Container */
 /* ------------------------------ */
 .main-content {
-    display: flex; /* Use Flexbox */
-    flex-direction: column; /* Arrange items vertically */
-    align-items: center; /* Center items horizontally */
-    /* Optional: Add padding or margin if needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
 }
 
 /* ------------------------------ */
 /* Header Styling */
 /* ------------------------------ */
 header {
-    margin-bottom: 20px; /* Space below the header */
+    margin-bottom: 20px;
 }
 
 header h1 {
-    font-family: 'Open Sans', sans-serif; /* Apply Open Sans for the title */
-    font-size: 2.5em; /* Large font size for the header */
-    font-weight: 600; /* Reduced boldness */
-    margin: 0; /* Remove default margin */
-    color: #fff; /* Header text color */
-    white-space: nowrap; /* Prevent text from wrapping */
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Optional: Add text shadow for better readability */
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    margin: 0;
+    color: #fff;
+    white-space: normal;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 /* ------------------------------ */
 /* Button Container Styling */
 /* ------------------------------ */
 .button-container {
-    width: 100%; /* Full width of the container */
-    max-width: 300px; /* Maximum width for buttons */
-    display: flex; /* Use Flexbox */
-    flex-direction: column; /* Stack buttons vertically */
-    align-items: center; /* Center buttons horizontally */
-    gap: 15px; /* Space between buttons */
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 }
 
 /* ------------------------------ */
 /* Button Styling */
 /* ------------------------------ */
 .btn {
-    display: flex; /* Use Flexbox for button content */
-    align-items: center; /* Center items vertically */
-    justify-content: space-between; /* Space between text and image */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px 20px; /* Padding inside the button */
-    color: white; /* Default text color */
-    text-decoration: none; /* Remove underline */
-    width: 100%; /* Full width of the container */
-    transition: background 0.3s ease, opacity 0.3s ease; /* Smooth transitions */
-    height: 60px; /* Fixed height */
-    box-sizing: border-box; /* Include padding and border in width and height */
-    font-family: 'Roboto', sans-serif; /* Apply Roboto for button text */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    padding: 12px 15px;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    transition: background 0.3s ease, opacity 0.3s ease;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    height: 60px; /* Consistent height */
 }
 
 .btn .text {
-    flex: 1; /* Allow text to take available space */
-    text-align: left; /* Left-align text */
-    font-size: 1.2em; /* Larger font size for text */
-    margin-right: 10px; /* Space between text and image */
+    flex: 1;
+    text-align: left;
+    font-size: 1em;
+    margin-right: 10px;
 }
 
 .button-logo {
-    height: 40px; /* Reasonable height for images */
-    width: auto; /* Maintain aspect ratio */
-    flex-shrink: 0; /* Prevent image from shrinking */
+    height: 30px;
+    width: auto;
+    flex-shrink: 0;
 }
 
 /* ------------------------------ */
@@ -184,148 +258,167 @@ header h1 {
 
 /* First Button: Books */
 #reader {
-    background-color: #FFFFFF; /* White background */
-    color: #000; /* Black text for better contrast */
+    background-color: #FFFFFF;
+    color: #000;
 }
 
 #reader .image-container {
-    background-color: #fff; /* Background color behind the image */
-    padding: 5px; /* Padding around the image */
-    border-radius: 5px; /* Rounded corners */
-    display: flex; /* Center the image */
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #reader .button-logo {
-    height: 30px; /* Smaller height for the first button's image */
-    width: auto; /* Maintain aspect ratio */
+    height: 30px;
+    width: auto;
 }
 
 /* Second Button: Company */
 #founder {
-    background: linear-gradient(45deg, orange, rgb(0, 0, 0)); /* Orange to black gradient */
-    color: white; /* White text */
+    background: linear-gradient(45deg, orange, rgb(0, 0, 0));
+    color: white;
 }
 
 /* Third Button: Code */
 #innovator {
-    background: linear-gradient(45deg, black, gray); /* Black to gray gradient */
-    color: white; /* White text */
+    background: linear-gradient(45deg, black, gray);
+    color: white;
 }
 
 /* Fourth Button: Purpose */
 #faith {
-    background: linear-gradient(45deg, gray, white); /* Gray to white gradient */
-    color: #000; /* Black text for readability */
+    background: linear-gradient(45deg, gray, white);
+    color: #000;
 }
 
 /* ------------------------------ */
 /* Hover Effects */
 /* ------------------------------ */
 .btn:hover {
-    opacity: 0.9; /* Slight transparency on hover */
+    opacity: 0.9;
 }
 
 /* ------------------------------ */
 /* "My Projects" Link Styling */
 /* ------------------------------ */
 .projects-link {
-    margin-top: 30px; /* Space above the projects link */
-    display: flex; /* Use Flexbox */
-    flex-direction: column; /* Stack text and chevron vertically */
-    align-items: center; /* Center horizontally */
-    gap: 5px; /* Space between text and chevron */
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
 }
 
 .projects-link a {
-    color: white; /* Link text color */
-    text-decoration: none; /* Remove underline */
-    font-size: 1.2em; /* Larger font size */
-    font-family: 'Roboto', sans-serif; /* Apply Roboto for link text */
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
 }
 
 .projects-link a:hover {
-    color: #ccc; /* Lighter color on hover */
+    color: #ccc;
 }
 
 /* Chevron Styling */
 .projects-link .chevron {
-    /* Removed animation */
-    width: 24px; /* Width of the SVG */
-    height: 24px; /* Height of the SVG */
-    display: flex; /* Use Flexbox for alignment */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .projects-link .chevron svg {
-    /* Optional: Adjust the color if needed */
-    stroke: white; /* Ensure the chevron is white */
+    stroke: white;
 }
 
 /* ------------------------------ */
 /* Responsive Adjustments */
 /* ------------------------------ */
 
-/* Mobile-First Approach: Styles for Mobile Devices First, Then Desktop */
+/* Desktop-Specific Styles */
 @media (min-width: 401px) {
-    /* Desktop-Specific Styles */
-
     header h1 {
-        font-size: 3em; /* Larger font size for desktop */
+        font-size: 3em;
     }
 
     .button-container {
-        max-width: 400px; /* Increase max-width for desktop */
+        max-width: 400px;
     }
 
     .btn {
-        height: 70px; /* Increase button height for desktop */
+        font-size: 1.1em;
+        padding: 14px 20px;
+        height: 70px; /* Increased height for desktop */
     }
 
     .button-logo {
-        height: 50px; /* Larger logo for desktop */
+        height: 40px;
     }
 
-    .projects-link .chevron {
-        width: 30px; /* Larger SVG width for desktop */
-        height: 30px; /* Larger SVG height for desktop */
+    .social-icon {
+        width: 36px;
+        height: auto; /* Maintain aspect ratio */
     }
 }
 
+/* Mobile-Specific Styles */
 @media (max-width: 400px) {
-    /* Mobile-Specific Styles */
-
-    body {
-        /* Ensure background image looks good on smaller screens */
-        background-position: center; /* Center the image */
-    }
-
-    header h1 {
-        font-size: 1.8em; /* Smaller font size for mobile */
-    }
-
     .button-container {
-        max-width: 90%; /* Adjust max width on smaller screens */
+        max-width: 90%;
     }
 
     .btn {
-        height: 50px; /* Reduced height for smaller screens */
-        padding: 8px 15px; /* Reduced padding */
+        padding: 12px 15px;
+        font-size: 1em;
+        height: 60px; /* Consistent height */
     }
 
     .button-logo {
-        height: 30px; /* Smaller image height */
+        height: 30px;
     }
 
-    .quote-corner {
-        font-size: 0.9em; /* Smaller font size */
-        max-width: 150px; /* Further reduce width for smaller screens */
+    .quote-container {
+        width: 90%; /* Increase width to take up more space */
+        left: 5%; /* Center the quote container */
     }
 
-    .projects-link .chevron {
-        width: 20px; /* Smaller SVG width */
-        height: 20px; /* Smaller SVG height */
+    header h1 {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .menu-btn span {
+        font-size: 32px;
+    }
+
+    .social-icon {
+        width: 30px;
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Social Media Icons in One Row with Even Spacing */
+    .social-icons {
+        flex-direction: row;
+        justify-content: space-around; /* Evenly distribute space */
+    }
+
+    .social-icons a {
+        margin: 0 10px; /* Equal margins on both sides */
+    }
+
+    .message-icon {
+        font-size: 30px;
+        display: inline-block;
+        transition: transform 0.3s ease;
+    }
+
+    /* Ensure the quote container does not overflow */
+    .quote-container blockquote {
+        font-size: 0.9em;
     }
 }

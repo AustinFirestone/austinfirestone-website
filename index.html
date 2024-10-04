@@ -3,18 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Austin Firestone</title>
+    <!-- Viewport Meta Tag for Responsive Design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Safari Theme Color Meta Tags -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#000000">
+    
     <!-- Google Fonts Integration -->
     <!-- Roboto for All Text and Open Sans for Title -->
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Preconnect with crossorigin -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
     <!-- Link to Your CSS File -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Quote Corner on the Left -->
-    <div class="quote-corner">
-        <p>Quote I've been pondering</p>
+    <!-- Quote Toggle Button (Lightbulb Emoji) -->
+    <div class="quote-toggle" aria-label="Toggle quote" role="button" tabindex="0">
+        <span class="lightbulb-emoji">💡</span>
+    </div>
+
+    <!-- Quote Container (Initially Hidden) -->
+    <div class="quote-container hidden">
+        <h2>Quote I've been pondering</h2>
         <blockquote>
             "Comrade," said Snowball, "those ribbons that you are so devoted to are the badge of slavery. Can you not understand that liberty is worth more than ribbons?"
             <footer>- Animal Farm, George Orwell</footer>
@@ -22,13 +35,13 @@
     </div>
 
     <!-- Hamburger Menu on the Right -->
-    <div class="menu-btn">
+    <div class="menu-btn" aria-label="Open navigation menu" role="button" tabindex="0">
         <span>&#9776;</span> <!-- Hamburger Icon -->
     </div>
-    <div class="menu">
+    <div class="menu hidden">
         <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#connect">Connect</a></li>
+            <li><a href="#" id="connect-btn">Connect</a></li>
         </ul>
     </div>
 
@@ -42,34 +55,36 @@
         <!-- Stacked Buttons with Logos -->
         <div class="button-container">
             <a href="https://www.goodreads.com/review/list/141805263?shelf=read" class="btn" id="reader" target="_blank" rel="noopener noreferrer">
-                <span class="text">Books</span>
+                <span class="text">Books:</span>
                 <span class="image-container">
                     <img src="https://d.gr-assets.com/misc/1454549184-1454549184_goodreads_misc.jpg" alt="Goodreads Logo" class="button-logo">
                 </span>
             </a>
             <a href="https://solomonnote.com" class="btn" id="founder" target="_blank" rel="noopener noreferrer">
-                <span class="text">Company</span>
+                <span class="text">Company:</span>
                 <img src="assets/solo_logo_lower.png" alt="Company Logo" class="button-logo">
             </a>
             <a href="https://github.com/AustinFirestone" class="btn" id="innovator" target="_blank" rel="noopener noreferrer">
-                <span class="text">Code</span>
+                <span class="text">Code:</span>
                 <img src="assets/github-logo.png" alt="GitHub Logo" class="button-logo">
             </a>
             <a href="https://www.bible.com/bible/59/1TI.4.10.ESV" class="btn" id="faith" target="_blank" rel="noopener noreferrer">
-                <span class="text">Purpose ✞</span>
+                <span class="text">Purpose: ✞</span>
                 <!-- If you want an image here, add it similarly -->
             </a>
         </div>
 
-        <!-- "My Projects" Link with Chevron Below the Text -->
-        <div class="projects-link">
-            <a href="#my-projects">My Projects</a>
-            <!-- SVG Chevron Arrow -->
-            <div class="chevron">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 9L12 15L18 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
+        <!-- Social Media Icons (Initially Hidden) -->
+        <div class="social-icons hidden" id="social-icons">
+            <a href="https://instagram.com/austincfirestone" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <img src="assets/instagram.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.linkedin.com/in/austin-firestone" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <img src="assets/linkedin.png" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="mailto:austinfirestone@icloud.com" aria-label="Message">
+                <span class="message-icon">💬</span>
+            </a>
         </div>
     </div>
 
