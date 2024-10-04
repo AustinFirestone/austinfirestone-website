@@ -25,3 +25,19 @@ document.getElementById('connect-btn').addEventListener('click', function(event)
     const socialIcons = document.getElementById('social-icons');
     socialIcons.classList.toggle('visible');
 });
+
+// Handle LinkedIn Button to Open App if Installed, Else Website
+document.getElementById('linkedin-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+
+    const linkedInProfileURL = 'https://www.linkedin.com/in/austin-firestone';
+    const linkedInAppURL = 'linkedin://in/austin-firestone';
+
+    // Attempt to open the LinkedIn app
+    window.location = linkedInAppURL;
+
+    // After a delay, redirect to the website
+    setTimeout(function() {
+        window.location = linkedInProfileURL;
+    }, 500);
+});
