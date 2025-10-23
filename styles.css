@@ -276,6 +276,13 @@ header h1 {
     width: auto;
 }
 
+
+
+#music {
+    background: linear-gradient(45deg, rgb(65, 66, 65), rgb(0, 0, 0));
+    color: white;
+}
+
 /* Second Button: Company */
 #founder {
     background: linear-gradient(45deg, orange, rgb(0, 0, 0));
